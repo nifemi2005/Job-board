@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "company": "Paystack",
+    "location": "Remote",
+    "type": "Full-time",
+    "salary": "$3k/month",
+    "postedAt": "2 days ago",
+    "description": "We are looking for a React developer...",
+    "skills": ["React", "Tailwind", "JavaScript"],
+    "logo": "/logos/paystack.png"
+  },
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "company": "Paystack",
+    "location": "Remote",
+    "type": "Full-time",
+    "salary": "$3k/month",
+    "postedAt": "2 days ago",
+    "description": "We are looking for a React developer...",
+    "skills": ["React", "Tailwind", "JavaScript"],
+    "logo": "/logos/paystack.png"
+  },
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "company": "Paystack",
+    "location": "Remote",
+    "type": "Full-time",
+    "salary": "$3k/month",
+    "postedAt": "2 days ago",
+    "description": "We are looking for a React developer...",
+    "skills": ["React", "Tailwind", "JavaScript"],
+    "logo": "/logos/paystack.png"
+  },
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "company": "Paystack",
+    "location": "Remote",
+    "type": "Full-time",
+    "salary": "$3k/month",
+    "postedAt": "2 days ago",
+    "description": "We are looking for a React developer...",
+    "skills": ["React", "Tailwind", "JavaScript"],
+    "logo": "/logos/paystack.png"
+  },
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "company": "Paystack",
+    "location": "Remote",
+    "type": "Full-time",
+    "salary": "$3k/month",
+    "postedAt": "2 days ago",
+    "description": "We are looking for a React developer...",
+    "skills": ["React", "Tailwind", "JavaScript"],
+    "logo": "/logos/paystack.png"
+  }
+]
