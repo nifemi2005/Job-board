@@ -1,5 +1,18 @@
 import React from "react";
 const JobCard = ({ job }) => {
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+
+    if (diffDays == 0) {
+      return "Today";
+    }
+    if (diffDays == 1) {
+      return "1 day ago"
+    }
+    return `${diffDays} days ago`;
+  };
   return (
     <div className="h-full">
       <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 max-w-[450px] px-4 md:px-5 py-5 sm:py-5 mx-auto h-full flex flex-col">
@@ -40,7 +53,7 @@ const JobCard = ({ job }) => {
         <div className="flex items-center justify-between mt-6">
           <div>
             <p className="font-semibold text-gray-900">{job.salary ?? "Salary not disclosed"}</p>
-            <p className="text-xs text-gray-500">{job.publication_date}</p>
+            <p className="text-xs text-gray-500">{formatDate(job.publication_date)}</p>
           </div>
           <button className="text-sm bg-blue-200 p-3 rounded-xl cursor-pointer hover:bg-blue-400 transition">
             Apply Now

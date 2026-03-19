@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaMapMarkerAlt, FaChevronDown, FaSearch } from "react-icons/fa";
 import Hero_img from "/src/assets/hero-image.png";
 import instagram from "/src/assets/Instagram.png";
@@ -6,7 +6,9 @@ import Google from "/src/assets/Google.png";
 import Microsoft from "/src/assets/Microsoft.png";
 import Behance from "/src/assets/behance.png";
 
-const Hero = () => {
+const Hero = ({onSearch}) => {
+  const [query, setQuery] = useState("")
+  const [location, setLocation] = useState("")
   return (
     <div className="bg-gray-200">
       <div className="bg-gray-200 px-9 flex flex-col md:flex-row justify-between items-center max-w-[1460px] mx-auto">
@@ -29,26 +31,26 @@ const Hero = () => {
           <div className="rounded-2xl flex flex-col lg:flex-row lg:items-center gap-4 lg:bg-white lg:py-1.5 lg:px-1.5">
             <input
               type="text"
-              name=""
-              id=""
               className="bg-gray-100 py-4 rounded-2xl pl-3 outline-0"
               placeholder="Job title or keywords"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
             />
             <div className="relative">
               <FaMapMarkerAlt className="absolute top-5 left-3 text-gray-300" />
               <FaChevronDown className="absolute right-6 top-5 text-gray-400" />
               <input
                 type="text"
-                name=""
-                id=""
                 className="bg-gray-100 py-4 rounded-2xl pl-10 outline-0 w-full"
                 placeholder="City or Zip code"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
               />
             </div>
-            <button className="bg-blue-200 p-4 rounded-4xl font-bold mb-3 lg:mb-0 lg:hidden">
+            <button onClick={() => onSearch(query, location)} className="bg-blue-200 p-4 rounded-4xl font-bold mb-3 lg:mb-0 lg:hidden cursor-pointer hover:bg-blue-500 transition">
               Search
             </button>
-            <button className="bg-blue-200 p-4 rounded-4xl font-bold mb-5 lg:mb-0 hidden lg:block">
+            <button onClick={(e) => onSearch(query, location)} className="bg-blue-200 p-4 rounded-4xl font-bold mb-5 lg:mb-0 hidden lg:block cursor-pointer hover:bg-blue-500 transition">
               <FaSearch />
             </button>
           </div>
