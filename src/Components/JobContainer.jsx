@@ -4,12 +4,16 @@ import JobsHeader from "../Components/JobsHeader";
 import JobCard from "../Components/JobCard";
 import JobLoadMore from "../Components/JobLoadMore";
 
-const JobContainer = ({ searchQuery = "", location = "", showAll = false }) => {
+const JobContainer = ({
+  searchQuery = "",
+  location = "",
+  showAll = false,
+  visible = 6,
+}) => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [sortOption, setSortOption] = useState("Newest");
-  const [visibleCount, setVisibleCount] = useState(6);
 
   useEffect(() => {
     setLoading(true);
@@ -47,7 +51,7 @@ const JobContainer = ({ searchQuery = "", location = "", showAll = false }) => {
       return bSalary - aSalary;
     }
   });
-  const visibleJobs = showAll ? sortedJobs : sortedJobs.slice(0, visibleCount);
+  const visibleJobs = showAll ? sortedJobs : sortedJobs.slice(0, visible);
 
   return (
     <div className="max-w-[1460px] mx-auto">
@@ -56,13 +60,10 @@ const JobContainer = ({ searchQuery = "", location = "", showAll = false }) => {
         sortOption={sortOption}
         setSortOption={setSortOption}
       />
-      <div className="flex flex-col items-center md:items-end">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 gap-5 md:mx-9 mb-5 md:mb-6">
-          {visibleJobs.map((job) => (
-            <JobCard key={job.id} job={job} />
-          ))}
-        </div>
-        <JobLoadMore setCount={setVisibleCount}/>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 gap-5 md:mx-9 mb-5 md:mb-6">
+        {visibleJobs.map((job) => (
+          <JobCard key={job.id} job={job} />
+        ))}
       </div>
     </div>
   );
