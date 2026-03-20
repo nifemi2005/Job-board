@@ -4,7 +4,7 @@ import JobsHeader from "../Components/JobsHeader";
 import JobCard from "../Components/JobCard";
 import JobLoadMore from "../Components/JobLoadMore";
 
-const JobContainer = ({ searchQuery = "", location = "" }) => {
+const JobContainer = ({ searchQuery = "", location = "", showAll = false }) => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -47,7 +47,7 @@ const JobContainer = ({ searchQuery = "", location = "" }) => {
       return bSalary - aSalary;
     }
   });
-  const visibleJobs = sortedJobs.slice(0, visibleCount);
+  const visibleJobs = showAll ? sortedJobs : sortedJobs.slice(0, visibleCount);
 
   return (
     <div className="max-w-[1460px] mx-auto">

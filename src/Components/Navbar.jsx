@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Hamburger from "hamburger-react";
 import { IoClose, IoMenu } from "react-icons/io5";
+import { useSavedJobs } from "../Context/SavedJobsContext";
 
 const Navbar = () => {
+  const { savedJobs } = useSavedJobs();
   const [open, setOpen] = useState(false);
   return (
     <nav className="relative top-0 z-50 bg-gray-200">
@@ -20,9 +22,18 @@ const Navbar = () => {
           <Link to="/jobs" className="">
             Jobs
           </Link>
-          <Link to="/saved" className="">
-            Saved Jobs
-          </Link>
+          <div className="flex relative">
+            <Link to="/saved" className="">
+              Saved Jobs
+            </Link>
+            <div>
+              {savedJobs.length > 0 && (
+                <p className="absolute bottom-3 text-xs bg-red-500 text-white rounded-full px-2 py-0.5">
+                  {savedJobs.length}
+                </p>
+              )}
+            </div>
+          </div>
         </div>
         <div className="hidden md:flex items-center gap-7">
           <Link to="/blog">Blog</Link>
@@ -33,7 +44,11 @@ const Navbar = () => {
         {/* mobile */}
         <div className="md:hidden">
           <button onClick={() => setOpen(!open)} className="text-[#052d7e]">
-            {open ? <IoClose className="text-3xl" /> : <IoMenu className="text-3xl"/> }
+            {open ? (
+              <IoClose className="text-3xl" />
+            ) : (
+              <IoMenu className="text-3xl" />
+            )}
           </button>
         </div>
       </div>
@@ -42,7 +57,9 @@ const Navbar = () => {
         {open && (
           <div className="md:hidden bg-gray-200 border-t border-gray-100 p-4 space-y-4 shadow-lg absolute w-full">
             <div className=" flex flex-col items-center gap-7">
-              <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+              <Link to="/" onClick={() => setOpen(false)}>
+                Home
+              </Link>
               <Link to="/jobs" className="">
                 Jobs
               </Link>

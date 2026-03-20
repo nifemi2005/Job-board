@@ -1,5 +1,11 @@
 import React from "react";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { useSavedJobs } from "../Context/SavedJobsContext";
+
 const JobCard = ({ job }) => {
+  const { savedJobs, toggleSave } = useSavedJobs();
+  const isSaved = savedJobs.some((j) => j.id === job.id);
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const now = new Date();
@@ -9,7 +15,7 @@ const JobCard = ({ job }) => {
       return "Today";
     }
     if (diffDays == 1) {
-      return "1 day ago"
+      return "1 day ago";
     }
     return `${diffDays} days ago`;
   };
@@ -34,9 +40,18 @@ const JobCard = ({ job }) => {
               </p>
             </div>
           </div>
-          <span className="text-xs font-medium bg-blue-100 text-blue-700 px-3 py-1 rounded-full whitespace-nowrap">
-            {job.job_type}
-          </span>
+          <div className="flex gap-2">
+            <span className="text-xs font-medium bg-blue-100 text-blue-700 px-3 py-1 rounded-full whitespace-nowrap">
+              {job.job_type}
+            </span>
+            <button onClick={() => toggleSave(job)}>
+              {isSaved ? (
+                <FaHeart className="text-red-500" />
+              ) : (
+                <FaRegHeart className="text-gray-400" />
+              )}
+            </button>
+          </div>
         </div>
 
         <div
@@ -52,8 +67,12 @@ const JobCard = ({ job }) => {
 
         <div className="flex items-center justify-between mt-6">
           <div>
-            <p className="font-semibold text-gray-900">{job.salary ?? "Salary not disclosed"}</p>
-            <p className="text-xs text-gray-500">{formatDate(job.publication_date)}</p>
+            <p className="font-semibold text-gray-900">
+              {job.salary ?? "Salary not disclosed"}
+            </p>
+            <p className="text-xs text-gray-500">
+              {formatDate(job.publication_date)}
+            </p>
           </div>
           <button className="text-sm bg-blue-200 p-3 rounded-xl cursor-pointer hover:bg-blue-400 transition">
             Apply Now
