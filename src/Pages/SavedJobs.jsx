@@ -2,6 +2,7 @@ import React from "react";
 import { useSavedJobs } from "../Context/SavedJobsContext";
 import Navbar from "../Components/Navbar";
 import JobCard from "../Components/JobCard";
+import Footer from "../Components/Footer";
 
 const SavedJobs = () => {
   const { savedJobs } = useSavedJobs();
@@ -13,6 +14,7 @@ const SavedJobs = () => {
           <JobCard key={job.id} job={job} />
         ))}
       </div>
+      <Footer/>
     </div>
   );
 };
