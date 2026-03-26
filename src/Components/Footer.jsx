@@ -12,7 +12,7 @@ const Footer = () => {
   };
   return (
     <div>
-      <hr className="text-gray-300 mt-2 hidden md:block"/>
+      <hr className="text-gray-300 mt-2 hidden md:block" />
       <div className="mx-5 md:mx-9">
         <div className="max-w-[1450px] md:flex items-center justify-between hidden">
           <div>
@@ -33,12 +33,18 @@ const Footer = () => {
                 FOR JOB SEEKERS
               </p>
               <div className="flex flex-col text-gray-500 font-medium">
-                <Link to='/jobs' className="hover:text-gray-700">Browse Jobs</Link>
+                <Link to="/jobs" className="hover:text-gray-700">
+                  Browse Jobs
+                </Link>
                 <Link to="/saved" className="hover:text-gray-700">
                   Saved Jobs
                 </Link>
-                <Link to='/soon' className="hover:text-gray-700">Job alerts</Link>
-                <Link className="hover:text-gray-700">Career advice</Link>
+                <Link to="/soon" className="hover:text-gray-700">
+                  Job alerts
+                </Link>
+                <Link to="/soon" className="hover:text-gray-700">
+                  Career advice
+                </Link>
               </div>
             </div>
             <div>
@@ -46,23 +52,35 @@ const Footer = () => {
                 FOR EMPLOYERS
               </p>
               <div className="flex flex-col text-gray-500 font-medium">
-                <Link className="hover:text-gray-700">Post a job</Link>
-                <Link to="/saved" className="hover:text-gray-700">
+                <Link to="/soon" className="hover:text-gray-700">
+                  Post a job
+                </Link>
+                <Link to="/soon" className="hover:text-gray-700">
                   Browse candidates
                 </Link>
-                <Link className="hover:text-gray-700">Pricing</Link>
-                <Link className="hover:text-gray-700">Recruiter tools</Link>
+                <Link to="/soon" className="hover:text-gray-700">
+                  Pricing
+                </Link>
+                <Link to="/soon" className="hover:text-gray-700">
+                  Recruiter tools
+                </Link>
               </div>
             </div>
             <div>
               <p className="font-bold text-[17px] text-gray-700">COMPANY</p>
               <div className="flex flex-col text-gray-500 font-medium">
-                <Link className="hover:text-gray-700">About us</Link>
-                <Link to="/saved" className="hover:text-gray-700">
+                <Link to="/soon" className="hover:text-gray-700">
+                  About us
+                </Link>
+                <Link to="/soon" className="hover:text-gray-700">
                   Contact
                 </Link>
-                <Link className="hover:text-gray-700">Privacy</Link>
-                <Link className="hover:text-gray-700">Terms of service</Link>
+                <Link to="/soon" className="hover:text-gray-700">
+                  Privacy
+                </Link>
+                <Link to="/soon" className="hover:text-gray-700">
+                  Terms of service
+                </Link>
               </div>
             </div>
           </div>
@@ -99,10 +117,18 @@ const Footer = () => {
               </div>
               {openSection === "seekers" && (
                 <div className="text-gray-600">
-                  <p>Browse Jobs</p>
-                  <p>Saved Jobs</p>
-                  <p>Job alerts</p>
-                  <p>Career advice</p>
+                  <Link to="/jobs" className="hover:text-gray-700">
+                    Browse Jobs
+                  </Link>
+                  <Link to="/saved" className="hover:text-gray-700">
+                    Saved Jobs
+                  </Link>
+                  <Link to="/soon" className="hover:text-gray-700">
+                    Job alerts
+                  </Link>
+                  <Link to="/soon" className="hover:text-gray-700">
+                    Career advice
+                  </Link>
                 </div>
               )}
             </div>
@@ -123,10 +149,18 @@ const Footer = () => {
               </div>
               {openSection === "employers" && (
                 <div className="text-gray-600">
-                  <p>Post a Job</p>
-                  <p>Browse candidates</p>
-                  <p>Pricing</p>
-                  <p>Recruiter tools</p>
+                  <Link to="/soon" className="hover:text-gray-700">
+                    Post a job
+                  </Link>
+                  <Link to="/soon" className="hover:text-gray-700">
+                    Browse candidates
+                  </Link>
+                  <Link to="/soon" className="hover:text-gray-700">
+                    Pricing
+                  </Link>
+                  <Link to="/soon" className="hover:text-gray-700">
+                    Recruiter tools
+                  </Link>
                 </div>
               )}
             </div>
@@ -145,10 +179,18 @@ const Footer = () => {
               </div>
               {openSection === "company" && (
                 <div className="text-gray-600">
-                  <p>About us</p>
-                  <p>Contact</p>
-                  <p>Privacy policy</p>
-                  <p>Terms of service</p>
+                  <Link to="/soon" className="hover:text-gray-700">
+                    About us
+                  </Link>
+                  <Link to="/soon" className="hover:text-gray-700">
+                    Contact
+                  </Link>
+                  <Link to="/soon" className="hover:text-gray-700">
+                    Privacy
+                  </Link>
+                  <Link to="/soon" className="hover:text-gray-700">
+                    Terms of service
+                  </Link>
                 </div>
               )}
             </div>
@@ -156,7 +198,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr className="text-gray-300 mb-3 hidden md:block"/>
+      <hr className="text-gray-300 mb-3 hidden md:block" />
       <div className="flex md:flex-row flex-col items-center justify-between mx-9 font-semibold text-gray-500">
         <p>© 2026 JobBoard. All rights reserved.</p>
         <p>Made with React & Tailwind</p>

@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex items-center gap-7">
           <Link to="/blog">Blog</Link>
-          <Link to="/register" className="border-2 p-3">
+          <Link to="/soon" className="btn btn-primary  btn-outline">
             Register Now
           </Link>
         </div>
@@ -67,7 +67,7 @@ const Navbar = () => {
                 Saved Jobs
               </Link>
               <Link to="/blog">Blog</Link>
-              <Link to="/register" className="border-2 p-3">
+              <Link to="/register" className="btn">
                 Register Now
               </Link>
             </div>
