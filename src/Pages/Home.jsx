@@ -3,6 +3,7 @@ import Navbar from "../Components/Navbar";
 import Hero from "../Components/Hero";
 import JobContainer from "../Components/JobContainer";
 import JobLoadMore from "../Components/JobLoadMore";
+import Footer from "../Components/Footer";
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -17,14 +18,15 @@ const Home = () => {
           setLocationQuery(loc);
         }}
       />
-      <div className="flex flex-col items-center md:items-end">
-        <JobContainer
-          searchQuery={searchQuery}
-          location={locationQuery}
-          visible={visibleCount}
-        />
+      <JobContainer
+        searchQuery={searchQuery}
+        location={locationQuery}
+        visible={visibleCount}
+      />
+      <div className="flex justify-center md:justify-end">
         <JobLoadMore visibleCount={setVisibleCount} />
       </div>
+      <Footer />
     </div>
   );
 };
