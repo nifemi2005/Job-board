@@ -33,11 +33,11 @@ const Footer = () => {
                 FOR JOB SEEKERS
               </p>
               <div className="flex flex-col text-gray-500 font-medium">
-                <Link className="hover:text-gray-700">Browse Jobs</Link>
+                <Link to='/jobs' className="hover:text-gray-700">Browse Jobs</Link>
                 <Link to="/saved" className="hover:text-gray-700">
                   Saved Jobs
                 </Link>
-                <Link className="hover:text-gray-700">Job alerts</Link>
+                <Link to='/soon' className="hover:text-gray-700">Job alerts</Link>
                 <Link className="hover:text-gray-700">Career advice</Link>
               </div>
             </div>
