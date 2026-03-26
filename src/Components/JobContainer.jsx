@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import JobsHeader from "../Components/JobsHeader";
 // import data from "../Data/Jobs.json";
 import JobCard from "../Components/JobCard";
-import JobLoadMore from "../Components/JobLoadMore";
 
 const JobContainer = ({
   searchQuery = "",
@@ -62,7 +61,7 @@ const JobContainer = ({
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 gap-5 md:mx-9 mb-5 md:mb-6">
         {visibleJobs.map((job) => (
-          <JobCard key={job.id} job={job} />
+          <JobCard job={job} key={job.id} />
         ))}
       </div>
     </div>
