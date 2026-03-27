@@ -10,8 +10,8 @@ const Hero = ({onSearch}) => {
   const [query, setQuery] = useState("")
   const [location, setLocation] = useState("")
   return (
-    <div className="bg-gray-200">
-      <div className="bg-gray-200 px-9 flex flex-col md:flex-row justify-between items-center max-w-[1460px] mx-auto">
+    <div className="">
+      <div className="px-9 flex flex-col md:flex-row justify-between items-center max-w-[1460px] mx-auto">
         <div className="max-w-[500px]">
           <div className="hidden bg-blue-100 py-3 rounded-3xl w-[90%] sm:w-[490px]">
             <span className="bg-[#073aa0] text-white py-2 px-3 rounded-3xl ml-2 mr-3">

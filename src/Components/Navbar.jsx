@@ -10,7 +10,7 @@ const Navbar = () => {
   const { savedJobs } = useSavedJobs();
   const [open, setOpen] = useState(false);
   return (
-    <nav className="relative top-0 z-50 bg-gray-200">
+    <nav className="sticky top-0 z-50 bg-gray-200">
       <div className="flex justify-between items-center px-4 md:px-9 py-5 sm:py-5 font-semibold text-[#052d7e] border-b-blue-100 shadow-xl">
         <div className="w-32 md:w-42 cursor-pointer">
           <img src={logo} alt="logo" />
