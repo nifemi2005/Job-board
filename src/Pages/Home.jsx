@@ -5,6 +5,7 @@ import JobContainer from "../Components/JobContainer";
 import JobLoadMore from "../Components/JobLoadMore";
 import Footer from "../Components/Footer";
 import NewsLetter from "../Components/newsLetter";
+import StatBanner from "../Components/StatBanner";
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -19,6 +20,7 @@ const Home = () => {
           setLocationQuery(loc);
         }}
       />
+      <StatBanner/>
       <JobContainer
         searchQuery={searchQuery}
         location={locationQuery}
