@@ -7,7 +7,9 @@ const Jobs = () => {
   return (
     <div>
       <Navbar/>
-      <JobContainer showAll/>
+      <div className='h-lvh'>
+        <JobContainer showAll/>
+      </div>
       <Footer/>
     </div>
   )
