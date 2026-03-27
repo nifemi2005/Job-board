@@ -4,6 +4,7 @@ import Hero from "../Components/Hero";
 import JobContainer from "../Components/JobContainer";
 import JobLoadMore from "../Components/JobLoadMore";
 import Footer from "../Components/Footer";
+import NewsLetter from "../Components/newsLetter";
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -26,6 +27,7 @@ const Home = () => {
       <div className="flex justify-center md:justify-end">
         <JobLoadMore visibleCount={setVisibleCount} />
       </div>
+      <NewsLetter />
       <Footer />
     </div>
   );
