@@ -116,7 +116,7 @@ const Footer = () => {
                 />
               </div>
               {openSection === "seekers" && (
-                <div className="text-gray-600 flex flex-col font-semibold">
+                <div className="text-gray-600 flex flex-col font-medium">
                   <Link to="/jobs" className="hover:text-gray-700">
                     Browse Jobs
                   </Link>
@@ -148,7 +148,7 @@ const Footer = () => {
                 />
               </div>
               {openSection === "employers" && (
-                <div className="text-gray-600 flex flex-col font-semibold">
+                <div className="text-gray-600 flex flex-col font-medium">
                   <Link to="/soon" className="hover:text-gray-700">
                     Post a job
                   </Link>
@@ -178,7 +178,7 @@ const Footer = () => {
                 />
               </div>
               {openSection === "company" && (
-                <div className="text-gray-600 flex flex-col font-semibold">
+                <div className="text-gray-600 flex flex-col font-medium">
                   <Link to="/soon" className="hover:text-gray-700">
                     About us
                   </Link>
